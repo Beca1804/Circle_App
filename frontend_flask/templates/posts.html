@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Publicaciones</h2>
+{% if posts %}
+  <ul>
+    {% for post in posts %}
+      <li><strong>{{ post.title }}</strong> - {{ post.content }}<br>
+      <small>Autor: {{ post.userId.username }}</small></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No hay publicaciones disponibles.</p>
+{% endif %}
+{% endblock %}
